@@ -172,7 +172,7 @@ namespace KerbalActuators
             this.vessel = FlightGlobals.ActiveVessel;
         }
 
-        public void Destroy()
+        public void OnDestroy()
         {
             GameEvents.onVesselLoaded.Remove(VesselWasLoaded);
             GameEvents.onVesselChange.Remove(VesselWasChanged);

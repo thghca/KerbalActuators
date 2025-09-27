@@ -58,5 +58,10 @@ namespace KerbalActuators
             WBIVTOLManager.Instance.ToggleGUI();
         }
 
+        private void OnDestroy()
+        {
+            GameEvents.onGUIApplicationLauncherReady.Remove(SetupGUI);
+        }
+
     }
 }
