@@ -25,7 +25,6 @@ namespace KerbalActuators
         const float kSmallIncrementFactor = 100.0f;
 
         public WBIVTOLManager vtolManager;
-        public HoverControlSetupGUI hoverSetupGUI = new HoverControlSetupGUI();
         public bool canDrawParkingControls;
         public bool canDrawRotationControls;
         public bool canDrawThrustControls;
@@ -71,9 +70,6 @@ namespace KerbalActuators
         public override void SetVisible(bool newValue)
         {
             base.SetVisible(newValue);
-
-            if (hoverSetupGUI != null)
-                hoverSetupGUI.vtolManager = this.vtolManager;
 
             if (canDrawParkingControls)
                 isParked = vtolManager.IsParked();
@@ -215,8 +211,7 @@ namespace KerbalActuators
             GUILayout.BeginVertical();
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button(settingsIcon, configButtonOptions))
-                hoverSetupGUI.SetVisible(true);
+
             GUILayout.EndHorizontal();
             GUILayout.EndVertical();
         }

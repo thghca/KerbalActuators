@@ -167,19 +167,26 @@ namespace KerbalActuators
 
             hoverGUI = new HoverVTOLGUI();
             hoverGUI.vtolManager = this;
-            hoverGUI.hoverSetupGUI.vtolManager = this;
 
             this.vessel = FlightGlobals.ActiveVessel;
         }
 
         public void OnDestroy()
         {
+
             GameEvents.onVesselLoaded.Remove(VesselWasLoaded);
             GameEvents.onVesselChange.Remove(VesselWasChanged);
             GameEvents.onStageActivate.Remove(OnStageActivate);
             KAEvents.onControllerUpdatedVerticalSpeed.Remove(onControllerUpdatedVerticalSpeed);
             KAEvents.onControllerUpdatedHoverActive.Remove(onControllerUpdatedHoverActive);
 
+            this.vessel = null;
+
+            hoverGUI.SetVisible(false);
+
+            hoverGUI.vtolManager = null;
+            hoverGUI = null;
+            
             WBIVTOLManager.Instance = null;
         }
 

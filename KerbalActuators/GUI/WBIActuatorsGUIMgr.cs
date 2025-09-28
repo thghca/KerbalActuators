@@ -38,6 +38,7 @@ namespace KerbalActuators
         {
             GameEvents.onHideUI.Remove(onHideUI);
             GameEvents.onShowUI.Remove(onShowUI);
+                
             Instance = null;
         }
 
