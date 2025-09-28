@@ -179,6 +179,8 @@ namespace KerbalActuators
             GameEvents.onStageActivate.Remove(OnStageActivate);
             KAEvents.onControllerUpdatedVerticalSpeed.Remove(onControllerUpdatedVerticalSpeed);
             KAEvents.onControllerUpdatedHoverActive.Remove(onControllerUpdatedHoverActive);
+
+            WBIVTOLManager.Instance = null;
         }
 
         public void ToggleGUI()

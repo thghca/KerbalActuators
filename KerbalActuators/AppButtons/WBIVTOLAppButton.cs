@@ -61,6 +61,7 @@ namespace KerbalActuators
         private void OnDestroy()
         {
             GameEvents.onGUIApplicationLauncherReady.Remove(SetupGUI);
+            WBIVTOLAppButton.appLauncherButton = null;
         }
 
     }
